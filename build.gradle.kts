@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.springframework.boot") version "2.7.0"
+    id("org.springframework.boot") version "3.0.5"
     id("io.spring.dependency-management") version "1.1.0"
 }
 
@@ -13,7 +13,7 @@ repositories {
     maven("https://packages.confluent.io/maven")
 }
 
-extra["springCloudVersion"] = "2021.0.3"
+extra["springCloudVersion"] = "2022.0.2"
 extra["testcontainersVersion"] = "1.17.6"
 
 dependencies {

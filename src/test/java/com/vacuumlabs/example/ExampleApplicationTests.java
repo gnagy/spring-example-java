@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest(properties = {"management.metrics.export.prometheus.enabled=true"})
+@SpringBootTest(properties = {"management.prometheus.metrics.export.enabled=true"})
 @AutoConfigureMockMvc(print = MockMvcPrint.DEFAULT, printOnlyOnFailure = false)
 @Testcontainers
 class ExampleApplicationTests {
@@ -122,7 +122,7 @@ class ExampleApplicationTests {
         );
         try (var consumer = new KafkaConsumer<String,String>(props)) {
             consumer.assign(Collections.singleton(new TopicPartition(topic, 0)));
-            return KafkaTestUtils.getSingleRecord(consumer, topic, java.time.Duration.ofSeconds(10).toMillis());
+            return KafkaTestUtils.getSingleRecord(consumer, topic, java.time.Duration.ofSeconds(10));
         }
     }
 }
