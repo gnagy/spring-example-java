@@ -51,7 +51,7 @@ class ExampleController {
 
 @Configuration
 class KafkaConfiguration {
-    @Bean
+    @Bean("message-saver")
     public Consumer<TransactionDto> messageSaver(MessageRepository messageRepository) {
         return message -> {
             if (!message.accountNumber().equals("ACC-123456")) {
