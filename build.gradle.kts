@@ -1,7 +1,8 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.0.5"
-    id("io.spring.dependency-management") version "1.1.0"
+    id("org.springframework.boot") version "3.1.3"
+    id("io.spring.dependency-management") version "1.1.3"
+    id("com.github.ben-manes.versions") version "0.48.0"
 }
 
 group = "com.vacuumlabs.example"
@@ -13,8 +14,8 @@ repositories {
     maven("https://packages.confluent.io/maven")
 }
 
-extra["springCloudVersion"] = "2022.0.2"
-extra["testcontainersVersion"] = "1.17.6"
+extra["springCloudVersion"] = "2022.0.4"
+extra["testcontainersVersion"] = "1.19.0"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
